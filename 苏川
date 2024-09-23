@@ -1,0 +1,41 @@
+if __name__ == "__main__":
+    CheckUpData()
+    Notice()
+    page=requests.get('https://share.weiyun.com/5zi4lwCL')
+    if '卡密开关状态【开】' in page.text:
+      print('[1]VIP版刷粉丝(1500~3000粉)/[2]公益刷粉丝(10~30粉)')
+      print('[3]VIP版刷评论(1500~3000评)/[4]公益刷评论(10~30评)')
+      print('[5]VIP版刷点赞(1500~3000赞)')
+      print('官方频道@SCNB10086')
+      xuanz=input('选择使用的功能1/2/3/4/5/6：')
+      if xuanz=="1":
+       main_daoru()      
+       Login1 = input('请输入卡密：') 
+       Login(Login1,'39495')
+      elif xuanz=="2":
+       print("高级功能仅支持vip用户/n你可使用公益评论")
+      elif xuanz=="3":
+       main_daoru()      
+       Login1 = input('请输入卡密：') 
+       Login3(Login1,'39495')
+      elif xuanz=="4":
+       page=requests.get('https://share.weiyun.com/5zi4lwCL')
+       if '脚本开关状态【关】' in page.text:      
+            print('脚本状态：',(red + '脚本已被关闭'+ redd))      
+            exit()
+       else:
+            print(green+'脚本正常开放'+redd)           
+            main_menu4()
+      elif xuanz=="5":
+       main_daoru()      
+       Login1 = input('请输入卡密：') 
+       Login5(Login1,'39495')
+      
+      else:
+       print("SZ，赶紧重开")
+    else:
+      YULUO_KSQIANDAO()
+    for i in range(1000000):
+        sum += i
+    end_time = time.time()
+    print("程序执行了%f秒"%(end_time - start_time))
