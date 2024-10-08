@@ -143,7 +143,7 @@ def MainMenu():
             sys.exit('\n Invalid Option !')
         try:
             file = eval(_input % " [-] File Name : ")
-            data = open(file).read()
+            data = open(file, encoding='utf-8').read()
         except IOError:
             sys.exit("\n File Not Found!")
         
