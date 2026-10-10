@@ -28,13 +28,41 @@ b16 = lambda in_ : base64.b16encode(in_)
 b32 = lambda in_ : base64.b32encode(in_)
 b64 = lambda in_ : base64.b64encode(in_)
 mar = lambda in_ : marshal.dumps(compile(in_,'<x>','exec'))
-note = "\x23\x20\x4f\x62\x66\x75\x73\x63\x61\x74\x65\x64\x20\x77\x69\x74\x68\x20\x50\x79\x4f\x62\x66\x75\x73\x63\x61\x74\x65\x0a\x23\x20\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x67\x69\x74\x68\x75\x62\x2e\x63\x6f\x6d\x2f\x68\x74\x72\x2d\x74\x65\x63\x68\x0a\x23\x20\x54\x69\x6d\x65\x20\x3a\x20%s\n\x23\x20\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x2d\x0a" % time.ctime()
+note = """# PyObfuscate
+# ------------------------------------------
+# Author: Tahmid Rayat
+# Github: https://www.github.com/htr-tech
+# ------------------------------------------
+
+"""
 
 def banner(): # Program Banner
-    print(' ╔═════════════════════════════════╗\n ║          PyObfuscate            ║\n ║  Simple Python Code Obfuscator  ║\n ║  Author : Tahmid Rayat          ║\n ║  Github : Github.com/HTR-TECH   ║\n ╚═════════════════════════════════╝\n')
+    print(' ╔═════════════════════════════════╗\n ║          PyObfuscate            ║\n ║  Simple Python Code Obfuscator  ║\n ║  Author : Tahmid Rayat          ║\n ║  Github : Github.com/HTR-TECH   ║\n ╚═════════════════════════════════╝')
 
 def menu(): # Program Menu
-    print("\x20\x5b\x30\x31\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x4d\x61\x72\x73\x68\x61\x6c\x0a\x20\x5b\x30\x32\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x5a\x6c\x69\x62\x0a\x20\x5b\x30\x33\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x42\x61\x73\x65\x31\x36\x0a\x20\x5b\x30\x34\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x42\x61\x73\x65\x33\x32\x0a\x20\x5b\x30\x35\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x42\x61\x73\x65\x36\x34\x0a\x20\x5b\x30\x36\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x5a\x6c\x69\x62\x2c\x42\x61\x73\x65\x31\x36\x0a\x20\x5b\x30\x37\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x5a\x6c\x69\x62\x2c\x42\x61\x73\x65\x33\x32\x0a\x20\x5b\x30\x38\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x5a\x6c\x69\x62\x2c\x42\x61\x73\x65\x36\x34\x0a\x20\x5b\x30\x39\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x4d\x61\x72\x73\x68\x61\x6c\x2c\x5a\x6c\x69\x62\x0a\x20\x5b\x31\x30\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x4d\x61\x72\x73\x68\x61\x6c\x2c\x42\x61\x73\x65\x31\x36\x0a\x20\x5b\x31\x31\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x4d\x61\x72\x73\x68\x61\x6c\x2c\x42\x61\x73\x65\x33\x32\x0a\x20\x5b\x31\x32\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x4d\x61\x72\x73\x68\x61\x6c\x2c\x42\x61\x73\x65\x36\x34\x0a\x20\x5b\x31\x33\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x4d\x61\x72\x73\x68\x61\x6c\x2c\x5a\x6c\x69\x62\x2c\x42\x31\x36\x0a\x20\x5b\x31\x34\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x4d\x61\x72\x73\x68\x61\x6c\x2c\x5a\x6c\x69\x62\x2c\x42\x33\x32\x0a\x20\x5b\x31\x35\x5d\x20\x45\x6e\x63\x6f\x64\x65\x20\x4d\x61\x72\x73\x68\x61\x6c\x2c\x5a\x6c\x69\x62\x2c\x42\x36\x34\x0a\x20\x5b\x31\x36\x5d\x20\x53\x69\x6d\x70\x6c\x65\x20\x45\x6e\x63\x6f\x64\x65\x0a\x20\x5b\x31\x37\x5d\x20\x45\x78\x69\x74\n")
+    print("""
+ [01] Encode Marshal
+ [02] Encode Zlib
+ [03] Encode Base16
+ [04] Encode Base32
+ [05] Encode Base64
+ [06] Encode Zlib,Base16
+ [07] Encode Zlib,Base32
+ [08] Encode Zlib,Base64
+ [09] Encode Marshal,Zlib
+ [10] Encode Marshal,Base16
+ [11] Encode Marshal,Base32
+ [12] Encode Marshal,Base64
+ [13] Encode Marshal,Zlib,B16
+ [14] Encode Marshal,Zlib,B32
+ [15] Encode Marshal,Zlib,B64
+ [16] Simple Encode
+ [17] Exit
+""")
+
+def pause():
+    print(" Press any key to continue ...")
+    input()
 
 class FileSize: # Gets the File Size
     def datas(self,z):
@@ -125,39 +153,49 @@ def SEncode(data,output):
 
 # Main Menu
 def MainMenu():
-    try:
-        os.system('clear') # os.system('cls')
-        banner()
-        menu()
+    while True:
         try:
-            option = int(eval(_input % " [-] Option : "))
-        except ValueError:
-            sys.exit("\n Invalid Option !")
-        
-        if option > 0 and option <= 17:
-            if option == 17:
-                sys.exit("\n Thanks For Using this Tool")
-            os.system('clear') # os.system('cls')
+            os.system('cls') # os.system('clear')
             banner()
-        else:
-            sys.exit('\n Invalid Option !')
-        try:
-            file = eval(_input % " [-] File Name : ")
-            data = open(file).read()
-        except IOError:
-            sys.exit("\n File Not Found!")
-        
-        output = file.lower().replace('.py', '') + '_enc.py'
-        if option == 16:
-            SEncode(data,output)
-        else:
-            Encode(option,data,output)
-        print("\n [-] Successfully Encrypted %s" % file)
-        print(" [-] Saved as %s" % output)
-        FileSize(output)
-    except KeyboardInterrupt:
-        time.sleep(1)
-        sys.exit()
+            menu()
+            try:
+                option = int(eval(_input % " [-] Option : "))
+            except ValueError:
+                #sys.exit("\n Invalid Option !")
+                print("\n Invalid Option !")
+                pause()
+                continue
+
+            if option > 0 and option <= 17:
+                if option == 17:
+                    sys.exit("\n Thanks For Using this Tool")
+                os.system('cls') # os.system('clear')
+                banner()
+            else:
+                #sys.exit('\n Invalid Option !')
+                print("\n Invalid Option !")
+                pause()
+                continue
+            try:
+                file = eval(_input % " [-] File Name : ")
+                data = open(file).read()
+            except IOError:
+                #sys.exit("\n File Not Found!")
+                print("\n File Not Found!")
+                pause();
+                continue;
+            
+            output = file.lower().replace('.py', '') + '_enc.py'
+            if option == 16:
+                SEncode(data,output)
+            else:
+                Encode(option,data,output)
+            print("\n [-] Successfully Encrypted %s" % file)
+            print(" [-] Saved as %s" % output)
+            FileSize(output)
+        except KeyboardInterrupt:
+            time.sleep(1)
+            sys.exit()
 
 if __name__ == "__main__":
     MainMenu()
